@@ -1,0 +1,18 @@
+.fondo{
+   background: linear-gradient(rgb(255, 128, 192), rgb(255, 255, 255));
+}
+
+.login-buttons{	
+	color:azure;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    width: 160px;
+    margin-left: 20px;
+    justify-content: space-evenly;
+}
+
+.boton1{	
+background-color: white;	
+}
+	

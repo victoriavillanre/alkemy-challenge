@@ -1,0 +1,21 @@
+package com.Victoria.challengeAlkemy.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.Victoria.challengeAlkemy.entity.Usuario;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, String> {
+
+	public Usuario findByUsuario(String username);
+
+	@Query("SELECT usuario.mail FROM Usuario WHERE usuario.mail = :mail")
+	public String findByMail(@Param("mail") String mail);
+
+	@Query("SELECT usuario.usuario FROM Usuario WHERE usuario.usuario = :username")
+	public String buscarUsuario(@Param("username") String username);
+
+	@Query("SELECT usuario.mail FROM Usuario WHERE usuario.mail = :mail AND usuario.usuario != :usuario")
+	public String findByMailUser(@Param("mail") String mail, @Param("usuario") String usuario);
+}
